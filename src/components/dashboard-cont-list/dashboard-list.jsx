@@ -162,20 +162,12 @@ const DashboardList = (props) => {
                     </div>
                     <div className="report-radio-wrap mt-4">
                         <div className="form-check mt-2">
-                            <div onClick={() => {
-                                handleClick3();
-                            }}>
                                 <input id="radio-switch-1" className="form-check-input" name="report-radio" type="radio" value="vertical-radio-daniel-craig"/>
                                 <label className="form-check-label" htmlFor="radio-switch-1">면담 승낙 후 연락해도 답변이 없음</label>
-                            </div>
                         </div>
                         <div className="form-check mt-2">
-                            <div onClick={() => {
-                                handleClick3();
-                            }}>
-                                <input id="radio-switch-2" className="form-check-input" name="report-radio" type="radio" value="vertical-radio-daniel-craig"/>
-                                <label className="form-check-label" htmlFor="radio-switch-2">약속한 일시에 면접이 이루어 지지 않음</label>
-                            </div>
+                                <input id="radio-switch-1" className="form-check-input" name="report-radio" type="radio" value="vertical-radio-daniel-craig"/>
+                                <label className="form-check-label" htmlFor="radio-switch-1">약속한 일시에 면접이 이루어 지지 않음</label>
                         </div>
                         <div className="form-check mt-2">
                             <input id="radio-switch-3" className="form-check-input" name="report-radio" type="radio" value="vertical-radio-daniel-craig" />

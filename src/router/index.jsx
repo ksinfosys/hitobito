@@ -22,9 +22,24 @@ import Withdraw from "../views/membership/withdraw";
 import MessageReception from "../views/message/message-reception";
 import MessageSent from "../views/message/message-sent";
 import MessageBox from "../views/message/message-box";
+import MessageDetail from "../views/message/message-detail";
+import MessageReply from "../views/message/message-reply";
 import ResumeRegist from "../views/resume-mng/resume-regist";
+
 import ResumeChange from "../views/resume-mng/resume-change";
 import UserGuideEmployee from "../views/sign-up/user-guide-employee";
+
+
+// 모바일
+import ResumeRegistMo2 from "../views/resume-mng/resume-regist-mo2";
+import ResumeRegistMo3 from "../views/resume-mng/resume-regist-mo3";
+import ResumeRegistMo4 from "../views/resume-mng/resume-regist-mo4";
+import ResumeRegistMo5 from "../views/resume-mng/resume-regist-mo5";
+import ResumeRegistMo6 from "../views/resume-mng/resume-regist-mo6";
+import ResumeRegistMo7 from "../views/resume-mng/resume-regist-mo7";
+import ResumeRegistMo8 from "../views/resume-mng/resume-regist-mo8";
+import ResumeRegistMo9 from "../views/resume-mng/resume-regist-mo9";
+import ResumeRegistMo10 from "../views/resume-mng/resume-regist-mo10";
 
 // 기업
 import DashboardBusiness from "../views/dashboard-business/dashboard-business";
@@ -58,6 +73,43 @@ function Router() {
                 {
                     path: "/resume-regist",
                     element: <ResumeRegist />,
+                },
+                // 이력서등록 모바일
+                {
+                    path: "/resume-regist-mo2",
+                    element: <ResumeRegistMo2 />,
+                },
+                {
+                    path: "/resume-regist-mo3",
+                    element: <ResumeRegistMo3 />,
+                },
+                {
+                    path: "/resume-regist-mo4",
+                    element: <ResumeRegistMo4 />,
+                },
+                {
+                    path: "/resume-regist-mo5",
+                    element: <ResumeRegistMo5 />,
+                },
+                {
+                    path: "/resume-regist-mo6",
+                    element: <ResumeRegistMo6 />,
+                },
+                {
+                    path: "/resume-regist-mo7",
+                    element: <ResumeRegistMo7 />,
+                },
+                {
+                    path: "/resume-regist-mo8",
+                    element: <ResumeRegistMo8 />,
+                },
+                {
+                    path: "/resume-regist-mo9",
+                    element: <ResumeRegistMo9 />,
+                },
+                {
+                    path: "/resume-regist-mo10",
+                    element: <ResumeRegistMo10 />,
                 },
                 //이력서 변경
                 {
@@ -103,6 +155,14 @@ function Router() {
                 {
                     path: "message-box",
                     element: <MessageBox />,
+                },
+                {
+                    path: "message-detail",
+                    element: <MessageDetail />,
+                },
+                {
+                    path: "message-reply",
+                    element: <MessageReply />,
                 },
                 // 이용가이드
                 {

@@ -77,13 +77,7 @@ html body {
 }
 
 /* sidemenu */
-.side-nav.on {
-    width: 85px;
-}
 
-.side-nav.on .side-menu__title {
-    display: none !important;
-}
 
 .tr {
     transition: all 0.3s;

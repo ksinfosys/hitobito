@@ -11,11 +11,11 @@ return (
 <>
     <div id="withdraw" className="membership">
         <div className="box-type-default">
-            <div className="p-5 border-b border-slate-200/60 text-sm">
+            <div className="p-5 border-b border-slate-200/60 text-lg font-bold lg:text-sm lg:font-normal">
                 회원탈퇴
             </div>
-            <div className="cont-wrap pt-10 text-center flex flex-col items-center justify-center">
-                <p className="font-bold">회원탈퇴를 진행할 경우 HITOBITO 서비스를<br/>이용할 수 없게 됩니다.</p>
+            <div className="cont-wrap py-10 px-5 text-center flex flex-col items-center justify-center">
+                <p className="font-bold">회원탈퇴를 진행할 경우 HITOBITO 서비스를<br className="hidden sm:block"/>이용할 수 없게 됩니다.</p>
                 <button type="button" className="btn btn-primary w-80 mt-10" onClick={() => {withdrawConfirm(true);}}>확인</button>
             </div>
         </div>

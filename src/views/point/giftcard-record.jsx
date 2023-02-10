@@ -12,19 +12,19 @@ return (
 <>
     <div id="nickname">
         <div className="box-type-default">
-            <div className="p-5 border-b border-slate-200/60 text-sm">
+            <div className="p-5 border-b border-slate-200/60 text-lg font-bold lg:text-sm lg:font-normal">
                 아마존 기프트카드 교환 이력
             </div>
-            <div className="cont-wrap p-5">
+            <div className="cont-wrap p-2 lg:p-5">
                 <div className="mt-5 mb-5">
-                    <div className="flex space-between items-center">
+                    <div className="flex flex-col sm:flex-row space-between lg:items-center p-3 lg:p-0">
                         <div className="font-bold font-xl">다나카님의 Amazon 기프트카드 교환 이력</div>
-                        <button type="button" className="btn btn-primary w-72">Amazon에 등록하기</button>
+                        <button type="button" className="btn btn-primary w-72 mt-2 sm:mt-0">Amazon에 등록하기</button>
                     </div>
                 
                     {/* 테이블 10줄 */}
                     <div className="mt-8">
-                        <table className="table mt-5">
+                        <table className="table mt-5 pc">
                             <thead className="table-light text-center">
                                 <tr>
                                     <th className="whitespace-nowrap text-sm">NO</th>
@@ -107,17 +107,91 @@ return (
                                 </tr>
                             </tbody>
                         </table>
+                        {/* 모바일 테이블 */}
+                        <table className="table mt-5 mo">
+                            <thead className="table-light text-center">
+                                <tr>
+                                    <th className="whitespace-nowrap text-sm">시리얼 번호</th>
+                                    <th className="whitespace-nowrap text-sm">교환일</th>
+                                    <th className="whitespace-nowrap text-sm">유효기간</th>
+                                    <th className="whitespace-nowrap text-sm">기프트카드 금액</th>
+                                </tr>
+                            </thead>
+                            <tbody className="text-center">
+                                <tr>
+                                    <td>QS25-3313DE-3DTG7</td>
+                                    <td className="text-slate-500">22-09-05</td>
+                                    <td>23-09-04</td>
+                                    <td className="font-bold">¥10,000</td>
+                                </tr>
+                                <tr>
+                                    <td>QS25-3313DE-3DTG7</td>
+                                    <td className="text-slate-500">22-09-05</td>
+                                    <td>23-09-04</td>
+                                    <td className="font-bold">¥10,000</td>
+                                </tr>
+                                <tr>
+                                    <td>QS25-3313DE-3DTG7</td>
+                                    <td className="text-slate-500">22-09-05</td>
+                                    <td>23-09-04</td>
+                                    <td className="font-bold">¥10,000</td>
+                                </tr>
+                                <tr>
+                                    <td>QS25-3313DE-3DTG7</td>
+                                    <td className="text-slate-500">22-09-05</td>
+                                    <td>23-09-04</td>
+                                    <td className="font-bold">¥10,000</td>
+                                </tr>
+                                <tr>
+                                    <td>QS25-3313DE-3DTG7</td>
+                                    <td className="text-slate-500">22-09-05</td>
+                                    <td>23-09-04</td>
+                                    <td className="font-bold">¥10,000</td>
+                                </tr>
+                                <tr>
+                                    <td>QS25-3313DE-3DTG7</td>
+                                    <td className="text-slate-500">22-09-05</td>
+                                    <td>23-09-04</td>
+                                    <td className="font-bold">¥10,000</td>
+                                </tr>
+                                <tr>
+                                    <td>QS25-3313DE-3DTG7</td>
+                                    <td className="text-slate-500">22-09-05</td>
+                                    <td>23-09-04</td>
+                                    <td className="font-bold">¥10,000</td>
+                                </tr>
+                                <tr>
+                                    <td>QS25-3313DE-3DTG7</td>
+                                    <td className="text-slate-500">22-09-05</td>
+                                    <td>23-09-04</td>
+                                    <td className="font-bold">¥10,000</td>
+                                </tr>
+                                <tr>
+                                    <td>QS25-3313DE-3DTG7</td>
+                                    <td className="text-slate-500">22-09-05</td>
+                                    <td>23-09-04</td>
+                                    <td className="font-bold">¥10,000</td>
+                                </tr>
+                                <tr>
+                                    <td>QS25-3313DE-3DTG7</td>
+                                    <td className="text-slate-500">22-09-05</td>
+                                    <td>23-09-04</td>
+                                    <td className="font-bold">¥10,000</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
         </div>
-        <div className="pagination-wrap flex space-between">
-            <div className="left-btn">
+        <div className="pagination-wrap flex items-center flex-center lg:space-between mt-5">
+            <div className="left-btn hidden lg:block">
                 <button className="btn btn-sm btn-outline-primary">
                     <Lucide icon="ArrowLeft" />
                     Previous
                 </button>
             </div>
+            <button type="button" className="lg:hidden"><Lucide icon="ChevronLeft" /></button>
             <div className="">
                 <nav className="w-full sm:w-auto sm:mr-auto">
                     <ul className="pagination">
@@ -149,12 +223,13 @@ return (
                     </ul>
                 </nav>
             </div>
-            <div className="right-btn">
+            <div className="right-btn hidden lg:block">
                 <button className="btn btn-sm btn-outline-primary active">
                     Next
                     <Lucide icon="ArrowRight" />
                 </button>
             </div>
+            <button type="button" className="lg:hidden"><Lucide icon="ChevronRight" /></button>
         </div>
     </div>
     {/* 닉네임 변경 확인 */}

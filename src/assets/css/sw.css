@@ -1,11 +1,20 @@
 @charset "UTF-8";
 @import "./_colors.css";
 
+@media (min-width:1024px){
+    .lg\:space-between {
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between !important;
+      }
+    .lg\:top-0{ top:0;}
+}
+.-top-6{top:-1.5rem;}
+
+
 *{word-break: keep-all; font-size:1rem;}
 .side-nav .side-menu .side-menu__title{font-size:0.875rem;}
 .btn:focus {--tw-ring-color: none!important;}
-
-
 
 select, input{border:1px solid #E4E7EA; font-size:0.875rem!important}
 select, select option, ::placeholder{color:#A8ABAE!important; }
@@ -16,14 +25,63 @@ select, select option, ::placeholder{color:#A8ABAE!important; }
 .table td{border-color:#F8FAFC; padding-top:1.25rem; padding-bottom:1.25rem;}
 .table .link{cursor:pointer}
 .table .link:hover{background:rgba(51,127, 241, .1);}
-.pagination-wrap {margin-top: 30px;} 
-.pagination-wrap .left-btn button {width: 100px;height: 38px;background: #FFFFFF;border: 1px solid #E2E8F0;-webkit-box-shadow: 0px 1px 2px rgba(15, 23, 42, 0.04);box-shadow: 0px 1px 2px rgba(15, 23, 42, 0.04);border-radius: 4px;-webkit-box-sizing: border-box;box-sizing: border-box;color: #CBD5E1;}
-.pagination-wrap .left-btn button.active {color: #1B4398;}
-.pagination-wrap .right-btn button {width: 73px;height: 38px;background: #FFFFFF;border: 1px solid #E2E8F0;-webkit-box-shadow: 0px 1px 2px rgba(15, 23, 42, 0.04);box-shadow: 0px 1px 2px rgba(15, 23, 42, 0.04);border-radius: 4px;-webkit-box-sizing: border-box;box-sizing: border-box;color: #CBD5E1;}
-.pagination-wrap .right-btn button.active {color: #1B4398;}
-.pagination-wrap .pagination .page-item.active .page-link {background: #FFFFFF;border: 1px solid #E2E8F0;-webkit-box-shadow: 0px 1px 2px rgba(15, 23, 42, 0.04);box-shadow: 0px 1px 2px rgba(15, 23, 42, 0.04);border-radius: 19px;}
-.pagination-wrap .pagination .page-link {margin-right: 0;}
-.pagination-wrap .pagination .page-link:focus {--tw-ring-shadow: none;}
+.table.mo{display: none;}
+.pagination-wrap .left-btn button {
+    width: 100px;
+    height: 38px;
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    -webkit-box-shadow: 0px 1px 2px rgba(15, 23, 42, 0.04);
+            box-shadow: 0px 1px 2px rgba(15, 23, 42, 0.04);
+    border-radius: 4px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    color: #CBD5E1;
+  }
+  .pagination-wrap .left-btn button.active {
+    color: #1B4398;
+  }
+  .pagination-wrap .right-btn button {
+    width: 73px;
+    height: 38px;
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    -webkit-box-shadow: 0px 1px 2px rgba(15, 23, 42, 0.04);
+            box-shadow: 0px 1px 2px rgba(15, 23, 42, 0.04);
+    border-radius: 4px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    color: #CBD5E1;
+  }
+  .pagination-wrap .right-btn button.active {
+    color: #1B4398;
+  }
+  .pagination-wrap .pagination .page-item.active .page-link {
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    -webkit-box-shadow: 0px 1px 2px rgba(15, 23, 42, 0.04);
+            box-shadow: 0px 1px 2px rgba(15, 23, 42, 0.04);
+    border-radius: 19px;
+  }
+  .pagination-wrap .pagination .page-link {
+    margin-right: 0;
+  }
+  .pagination-wrap .pagination .page-link:focus {
+    --tw-ring-shadow: none;
+  }
+
+@media (max-width: 1024px) {
+    .side-nav{display: none;}
+    .content{padding-bottom: 60px;}
+    .content:before{content: none;}
+    .box-type-default{border:0; box-shadow: none; border-radius:0;}
+    .table.pc{display: none;}
+    .table.mo{display: table;}
+    .table td, .table th{padding: 0.75rem 0.2rem; font-size: 0.75rem;}
+    .pagination .page-item .page-link{min-width: 40px !important;}
+    .pagination-wrap .pagination .page-item.active .page-link{border:0; color:rgb(51 127 241); background:transparent;}
+}
+
 
 .guide-table.w-auto{width: auto;}
 .guide-table th, .guide-table td{font-size:0.75rem; line-height: 1rem; text-align: center; padding:5px 5px!important;}
@@ -36,6 +94,7 @@ select, select option, ::placeholder{color:#A8ABAE!important; }
 /*** 포인트 관리 ***/
 .point-input input{border:0; padding:0; text-align: right;}
 .point-input input::-webkit-input-placeholder { text-align:right; font-weight: bold; color: #A8ABAE;}
+.all-check{width: 30px;height: 30px;}
 
 /*** 닉네임 변경 ***/
 .nickname .form{width:97%; max-width: 440px; margin: 0 auto;}
@@ -45,12 +104,18 @@ select, select option, ::placeholder{color:#A8ABAE!important; }
 
 /*** 메시지함 ***/
 .tab-btn{position: relative;}
+.tab-active{color:rgb(51 127 241)}
 .tab-active:after{content:''; position: absolute; width: 100%; left: 0; height: 2px; bottom: -2px; background:rgb(51 127 241)}
 /* 메시지 상세, 답장 modal */
 #detail-cont{overflow-y: auto; overflow-x:hidden; max-height: calc(100vh - 20rem);}
 #detail-modal-btn button{width: 100px;height: 26px; font-size:14px;}
 #reply-title input{border:0;padding: 0; width:calc(100% - 8rem)}
 
+@media (max-width:768px){
+    [class*=w\/]{width: 100%;}
+    .w\/3 li{width:calc(100% / 3);}
+    .w\/3 li *{width:100%;}
+}
 
 
 

@@ -68,7 +68,7 @@ function Main() {
                                     className=""
                                 >
                                     <img src={UserIcon} alt="" />
-                                    <div className="number-noti">100</div>
+                                    <div className="number-noti blue">100</div>
                                 </DropdownToggle>
                                 <DropdownMenu className="notification-content pt-2 orange">
                                     <DropdownContent tag="div" className="notification-content__box">

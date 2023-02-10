@@ -152,5 +152,5 @@
 
 /* 퍼블리셔 스타일 커스터마이징 */
 @import "./style.css";
-@import "./chloe.css";
+@import "../sass/chloe.css";
 @import "./sw.css";

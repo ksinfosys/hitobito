@@ -5,7 +5,7 @@ import {
 } from "@/base-components";
 import { useState } from 'react';
 import DashboardList from "../../components/dashboard-cont-list/dashboard-list";
-
+import DashboardMobile from "../../components/dashboard-mobile/dashboard-mobile";
 
 const Dashboard = () => {
     const [isActive, setIsActive] = useState(false);
@@ -23,12 +23,12 @@ const Dashboard = () => {
     const [pointRequestModal, setpointRequestModal] = useState(false);
     const [reportRequestModal, setreportRequestModal] = useState(false);
 
- 
+
 
     return (
         <>
             <div className="dashboard">
-                <div className="box-type-default">
+                <div className="box-type-default hidden lg:block">
                     <div className="dashboard-top p-5 border-b border-slate-200/60 text-sm">
                         면접 제의 리스트
                     </div>
@@ -40,13 +40,13 @@ const Dashboard = () => {
                             </div>
                             <div className="dashboard-tit-list ml-auto flex flex-center w-full">LIST</div>
                         </div>
-                        <DashboardList progress="progress-bar  w-5/6 bg-danger"/>
-                        <DashboardList progress="progress-bar  w-3/6 bg-orange"/>
-                        <DashboardList progress="progress-bar  w-2/6 bg-green"/>
-                        <DashboardList progress="progress-bar  w-1/6 bg-green"/>
-                        <DashboardList progress="progress-bar  w-4/6 bg-green"/>
-                        <DashboardList progress="progress-bar  w-2/6 bg-green"/>
-                        <DashboardList progress="progress-bar  w-3/6 bg-green"/>
+                        <DashboardList progress="progress-bar  w-5/6 bg-danger" />
+                        <DashboardList progress="progress-bar  w-3/6 bg-orange" />
+                        <DashboardList progress="progress-bar  w-2/6 bg-green" />
+                        <DashboardList progress="progress-bar  w-1/6 bg-green" />
+                        <DashboardList progress="progress-bar  w-4/6 bg-green" />
+                        <DashboardList progress="progress-bar  w-2/6 bg-green" />
+                        <DashboardList progress="progress-bar  w-3/6 bg-green" />
                         <div className="all-btn-wrap flex">
                             <button className="btn btn-sm btn-primary">
                                 일괄승낙
@@ -57,7 +57,34 @@ const Dashboard = () => {
                         </div>
                     </div>
                 </div>
-                <div className="pagination-wrap flex space-between">
+                <div className="mobile-dashboard lg:hidden">
+                    <div className="mobile-top-btn-box flex items-center space-between">
+                        <div className="flex gap-2">
+                            <button className="btn btn-sm btn-outline-primary">
+                                일괄 승낙
+                            </button>
+                            <button className="btn btn-sm btn-skyblue">
+                                일괄 거절
+                            </button>
+                            <button className="btn btn-sm btn-outline-secondary">
+                                삭제
+                            </button>
+                        </div>
+                        <div className="check-btn-wrap">
+                            <div className="check-all">
+                                <input id="all1" className="form-check-input" type="checkbox" value="" />
+                                <label className="form-check-label" htmlFor="all1">allCheck</label>
+                            </div>
+                        </div>
+                    </div>
+                    <DashboardMobile progress="progress-bar bg-danger" bg="compo-bg-gray" checkid="cb1" />
+                    <DashboardMobile progress="progress-bar bg-orange" bg="compo-bg-white" checkid="cb2" />
+                    <DashboardMobile progress="progress-bar bg-green" bg="compo-bg-white" checkid="cb3" />
+                    <DashboardMobile progress="progress-bar bg-green" bg="compo-bg-white" checkid="cb4" />
+                    <DashboardMobile progress="progress-bar bg-green" bg="compo-bg-gray" checkid="cb5" />
+
+                </div>
+                <div className="lg:flex hidden pagination-wrap space-between">
                     <div className="left-btn">
                         <button className="btn btn-sm btn-outline-primary">
                             <Lucide icon="ArrowLeft" />

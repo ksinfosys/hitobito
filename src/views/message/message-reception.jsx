@@ -13,32 +13,38 @@ return (
 <>
     <div className="message-reception">
         <div className="box-type-default">
-            <div className="p-5 border-b border-slate-200/60 text-sm">
+            <div className="p-5 border-b border-slate-200/60 text-lg font-bold lg:text-sm lg:font-normal">
                 메시지함
             </div>
-            <div className="p-5">
-                <div className="flex border-b-2 ">
-                    <button type="button" className="p-2 tab-btn tab-active">
-                        <Link to="/message-reception">수신 메시지함</Link>
-                    </button>
-                    <button type="button" className="p-2 tab-btn">
-                        <Link to="/message-sent">발신 메시지함</Link>
-                    </button>
-                    <button type="button" className="p-2 tab-btn">
-                        <Link to="/message-box">메시지 보관함</Link>
-                    </button>
-                </div>
+            <div className="into-y grid grid-cols-12 gap-6 list-top items-center p-5">
+                <ul className="col-span-12 flex border-b-2 w/3">
+                    <li>
+                        <button type="button" className="p-2 tab-btn tab-active w-full">
+                            <Link to="/message-reception">수신 메시지함</Link>
+                        </button>
+                    </li>
+                    <li>
+                        <button type="button" className="p-2 tab-btn w-full">
+                            <Link to="/message-sent">발신 메시지함</Link>
+                        </button>
+                    </li>
+                    <li>
+                        <button type="button" className="p-2 tab-btn w-full">
+                            <Link to="/message-box">메시지 보관함</Link>
+                        </button>
+                    </li>
+                </ul>
 
-                <div className="mt-5">
-                    <div className="flex space-between">
-                        <div className="flex items-center gap-2">
+                <div className="col-span-12 relative">
+                    <div className="flex flex-col items-end lg:flex-row itmes-center space-between">
+                        <div className="flex items-center gap-2 w-full lg:w-auto">
                             <select className="form-select w-32">
                                 <option>발신자</option>
                                 <option>브랜드1</option>
                                 <option>브랜드2</option>
                             </select>
-                            <div class="search block">
-                                <input className="form-input form-control cu-search w-72" type="text"
+                            <div class="search block w-full">
+                                <input className="form-input form-control cu-search" type="text"
                                     placeholder="검색어를 입력하세요" />
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                     fill="none" stroke="#E4E7EA" stroke-width="2" stroke-linecap="round"
@@ -49,108 +55,192 @@ return (
                                 </svg>
                             </div>
                         </div>
-                        <div>
-                            <button className="btn btn-sm btn-primary w-24 mr-2" onClick={() => {setMessageReply(true);}}>답장</button>
-                            <button className="btn btn-sm btn-outline-primary w-24 mr-2" onClick={() => {setMessageSave(true);}}>보관</button>
-                            <button className="btn btn-sm btn-outline-secondary w-24" onClick={() => {setMessageDelete(true);}}>삭제</button>
-                        </div>
+                        <ul className="flex gap-2 mt-5 lg:mt-0">
+                            <li><input className="all-check form-check-input btn absolute left-0 block lg:hidden" type="checkbox" value="all-check"/></li>
+                            <li><button className="btn btn-sm btn-primary sm:w-24 w-16" onClick={() => {setMessageReply(true);}}>답장</button></li>
+                            <li><button className="btn btn-sm btn-outline-primary sm:w-24 w-16" onClick={() => {setMessageSave(true);}}>보관</button></li>
+                            <li><button className="btn btn-sm btn-outline-secondary sm:w-24 w-16" onClick={() => {setMessageDelete(true);}}>삭제</button></li>
+                        </ul>
                     </div>
                     {/* 테이블 10줄 */}
-                    <table className="table mt-5">
-                        <thead className="table-light text-center">
-                            <tr>
-                                <th className="whitespace-nowrap">
-                                    <input className="form-check-input" type="checkbox" value="" />
-                                </th>
-                                <th className="whitespace-nowrap">발신자</th>
-                                <th className="whitespace-nowrap">제목</th>
-                                <th className="whitespace-nowrap">받은 시간</th>
-                                <th className="whitespace-nowrap">답장</th>
-                            </tr>
-                        </thead>
-                        <tbody className="text-center">
-                            <tr className="link" onClick={() => {setMessageDetail(true);}}>
-                                <td><input className="form-check-input" type="checkbox" value="" /></td>
-                                <td>SONY ENTERTAINMENT</td>
-                                <td>안녕하십니까. 구직 제의 드립니다.</td>
-                                <td className="text-slate-500">2023-09-04 [15:47]</td>
-                                <td className="text-info">03</td>
-                            </tr>
-                            <tr className="link" onClick={() => {setMessageDetail(true);}}>
-                                <td><input className="form-check-input" type="checkbox" value="" /></td>
-                                <td>YAMAHA</td>
-                                <td>당사는 아래와 같이 구직자분을 모집합니다.</td>
-                                <td className="text-slate-500">2023-09-04 [15:47]</td>
-                                <td className="text-info">01</td>
-                            </tr>
-                            <tr className="link" onClick={() => {setMessageDetail(true);}}>
-                                <td><input className="form-check-input" type="checkbox" value="" /></td>
-                                <td>NINTENDO</td>
-                                <td>닌텐도와 함께 열정적인 분을 모집합니다.</td>
-                                <td className="text-slate-500">2023-09-04 [15:47]</td>
-                                <td className="text-info">03</td>
-                            </tr>
-                            <tr className="link" onClick={() => {setMessageDetail(true);}}>
-                                <td><input className="form-check-input" type="checkbox" value="" /></td>
-                                <td>TOYOTA</td>
-                                <td>세계로 미래로 열정을 그대에게</td>
-                                <td className="text-slate-500">2023-09-04 [15:47]</td>
-                                <td className="text-info">10</td>
-                            </tr>
-                            <tr className="link" onClick={() => {setMessageDetail(true);}}>
-                                <td><input className="form-check-input" type="checkbox" value="" /></td>
-                                <td>MITSUBITSHI</td>
-                                <td>안녕하십니까. 구직제의 드립니다.</td>
-                                <td className="text-slate-500">2023-09-04 [15:47]</td>
-                                <td className="text-info">03</td>
-                            </tr>
-                            <tr className="link" onClick={() => {setMessageDetail(true);}}>
-                                <td><input className="form-check-input" type="checkbox" value="" /></td>
-                                <td>SNK</td>
-                                <td>당사는 아래와 같이 구직자분을 모집합니다.</td>
-                                <td className="text-slate-500">2023-09-04 [15:47]</td>
-                                <td className="text-info">01</td>
-                            </tr>
-                            <tr className="link" onClick={() => {setMessageDetail(true);}}>
-                                <td><input className="form-check-input" type="checkbox" value="" /></td>
-                                <td>KONAMI</td>
-                                <td>닌텐도와 함께 열정적인 분을 모집합니다.</td>
-                                <td className="text-slate-500">2023-09-04 [15:47]</td>
-                                <td className="text-info">03</td>
-                            </tr>
-                            <tr className="link" onClick={() => {setMessageDetail(true);}}>
-                                <td><input className="form-check-input" type="checkbox" value="" /></td>
-                                <td>CAPCOM</td>
-                                <td>세계로 미래로 열정을 그대에게</td>
-                                <td className="text-slate-500">2023-09-04 [15:47]</td>
-                                <td className="text-info">10</td>
-                            </tr>
-                            <tr>
-                                <td><input className="form-check-input" type="checkbox" value="" /></td>
-                                <td>NISSAN</td>
-                                <td>안녕하십니까. 구직제의 드립니다.</td>
-                                <td className="text-slate-500">2023-09-04 [15:47]</td>
-                                <td className="text-info">03</td>
-                            </tr>
-                            <tr className="link" onClick={() => {setMessageDetail(true);}}>
-                                <td><input className="form-check-input" type="checkbox" value="" /></td>
-                                <td>SOFT BACK</td>
-                                <td>당사는 아래와 같이 구직자분을 모집합니다.</td>
-                                <td className="text-slate-500">2023-09-04 [15:47]</td>
-                                <td className="text-info">01</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <div className="overflow-x-auto">
+                        <table className="table mt-5 pc">
+                            <thead className="table-light text-center">
+                                <tr>
+                                    <th className="whitespace-nowrap">
+                                        <input className="form-check-input" type="checkbox" value="" />
+                                    </th>
+                                    <th className="whitespace-nowrap">발신자</th>
+                                    <th className="whitespace-nowrap">제목</th>
+                                    <th className="whitespace-nowrap">받은 시간</th>
+                                    <th className="whitespace-nowrap">답장</th>
+                                </tr>
+                            </thead>
+                            <tbody className="text-center">
+                                <tr className="link" onClick={() => {setMessageDetail(true);}}>
+                                    <td><input className="form-check-input" type="checkbox" value="" /></td>
+                                    <td>SONY ENTERTAINMENT</td>
+                                    <td>안녕하십니까. 구직 제의 드립니다.</td>
+                                    <td className="text-slate-500">2023-09-04 [15:47]</td>
+                                    <td className="text-info">03</td>
+                                </tr>
+                                <tr className="link" onClick={() => {setMessageDetail(true);}}>
+                                    <td><input className="form-check-input" type="checkbox" value="" /></td>
+                                    <td>YAMAHA</td>
+                                    <td>당사는 아래와 같이 구직자분을 모집합니다.</td>
+                                    <td className="text-slate-500">2023-09-04 [15:47]</td>
+                                    <td className="text-info">01</td>
+                                </tr>
+                                <tr className="link" onClick={() => {setMessageDetail(true);}}>
+                                    <td><input className="form-check-input" type="checkbox" value="" /></td>
+                                    <td>NINTENDO</td>
+                                    <td>닌텐도와 함께 열정적인 분을 모집합니다.</td>
+                                    <td className="text-slate-500">2023-09-04 [15:47]</td>
+                                    <td className="text-info">03</td>
+                                </tr>
+                                <tr className="link" onClick={() => {setMessageDetail(true);}}>
+                                    <td><input className="form-check-input" type="checkbox" value="" /></td>
+                                    <td>TOYOTA</td>
+                                    <td>세계로 미래로 열정을 그대에게</td>
+                                    <td className="text-slate-500">2023-09-04 [15:47]</td>
+                                    <td className="text-info">10</td>
+                                </tr>
+                                <tr className="link" onClick={() => {setMessageDetail(true);}}>
+                                    <td><input className="form-check-input" type="checkbox" value="" /></td>
+                                    <td>MITSUBITSHI</td>
+                                    <td>안녕하십니까. 구직제의 드립니다.</td>
+                                    <td className="text-slate-500">2023-09-04 [15:47]</td>
+                                    <td className="text-info">03</td>
+                                </tr>
+                                <tr className="link" onClick={() => {setMessageDetail(true);}}>
+                                    <td><input className="form-check-input" type="checkbox" value="" /></td>
+                                    <td>SNK</td>
+                                    <td>당사는 아래와 같이 구직자분을 모집합니다.</td>
+                                    <td className="text-slate-500">2023-09-04 [15:47]</td>
+                                    <td className="text-info">01</td>
+                                </tr>
+                                <tr className="link" onClick={() => {setMessageDetail(true);}}>
+                                    <td><input className="form-check-input" type="checkbox" value="" /></td>
+                                    <td>KONAMI</td>
+                                    <td>닌텐도와 함께 열정적인 분을 모집합니다.</td>
+                                    <td className="text-slate-500">2023-09-04 [15:47]</td>
+                                    <td className="text-info">03</td>
+                                </tr>
+                                <tr className="link" onClick={() => {setMessageDetail(true);}}>
+                                    <td><input className="form-check-input" type="checkbox" value="" /></td>
+                                    <td>CAPCOM</td>
+                                    <td>세계로 미래로 열정을 그대에게</td>
+                                    <td className="text-slate-500">2023-09-04 [15:47]</td>
+                                    <td className="text-info">10</td>
+                                </tr>
+                                <tr>
+                                    <td><input className="form-check-input" type="checkbox" value="" /></td>
+                                    <td>NISSAN</td>
+                                    <td>안녕하십니까. 구직제의 드립니다.</td>
+                                    <td className="text-slate-500">2023-09-04 [15:47]</td>
+                                    <td className="text-info">03</td>
+                                </tr>
+                                <tr className="link" onClick={() => {setMessageDetail(true);}}>
+                                    <td><input className="form-check-input" type="checkbox" value="" /></td>
+                                    <td>SOFT BACK</td>
+                                    <td>당사는 아래와 같이 구직자분을 모집합니다.</td>
+                                    <td className="text-slate-500">2023-09-04 [15:47]</td>
+                                    <td className="text-info">01</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        {/* 모바일 테이블 */}
+                        <ul className="table mt-5 mo">
+                            <Link to = "/message-detail">
+                                <li className="border-b py-3">
+                                    <ul className="flex space-between text-slate-400 mb-3">
+                                        <li>
+                                            <input className="form-check-input mr-2" type="checkbox" value="" />
+                                            <span className="text-sm">SONY ENTERTAINMEN</span>
+                                        </li>
+                                        <li className="float-left text-sm">23-09-04 [15:47]</li>
+                                    </ul>
+                                    <div>안녕하십니까. 구직 제의 드립니다.</div>
+                                </li>
+                            </Link>
+
+                            <Link to = "/message-detail">
+                            <li className="border-b py-3 ">
+                                <ul className="flex space-between text-slate-400 mb-3">
+                                    <li>
+                                        <input className="form-check-input mr-2" type="checkbox" value="" />
+                                        <span className="text-sm">YAMAHA</span>
+                                    </li>
+                                    <li className="float-left text-sm">23-09-04 [15:47]</li>
+                                </ul>
+                                <div>안녕하십니까. 구직 제의 드립니다.</div>
+                            </li>
+                            </Link>
+
+                            <Link to = "/message-detail">
+                            <li className="border-b py-3 ">
+                                <ul className="flex space-between text-slate-400 mb-3">
+                                    <li>
+                                        <input className="form-check-input mr-2" type="checkbox" value="" />
+                                        <span className="text-sm">NINTENDO</span>
+                                    </li>
+                                    <li className="float-left text-sm">23-09-04 [15:47]</li>
+                                </ul>
+                                <div>안녕하십니까. 구직 제의 드립니다.</div>
+                            </li>
+                            </Link>
+
+                            <Link to = "/message-detail">
+                            <li className="border-b py-3 ">
+                                <ul className="flex space-between text-slate-400 mb-3">
+                                    <li>
+                                        <input className="form-check-input mr-2" type="checkbox" value="" />
+                                        <span className="text-sm">SONY ENTERTAINMENT</span>
+                                    </li>
+                                    <li className="float-left text-sm">23-09-04 [15:47]</li>
+                                </ul>
+                                <div>안녕하십니까. 구직 제의 드립니다.</div>
+                            </li>
+                            </Link>
+
+                            <Link to = "/message-detail">
+                            <li className="border-b py-3 ">
+                                <ul className="flex space-between text-slate-400 mb-3">
+                                    <li>
+                                        <input className="form-check-input mr-2" type="checkbox" value="" />
+                                        <span className="text-sm">YAMAHA</span>
+                                    </li>
+                                    <li className="float-left text-sm">23-09-04 [15:47]</li>
+                                </ul>
+                                <div>안녕하십니까. 구직 제의 드립니다.</div>
+                            </li>
+                            </Link>
+
+                            <Link to = "/message-detail">
+                            <li className="border-b py-3 ">
+                                <ul className="flex space-between text-slate-400 mb-3">
+                                    <li>
+                                        <input className="form-check-input mr-2" type="checkbox" value="" />
+                                        <span className="text-sm">NINTENDO</span>
+                                    </li>
+                                    <li className="float-left text-sm">23-09-04 [15:47]</li>
+                                </ul>
+                                <div>안녕하십니까. 구직 제의 드립니다.</div>
+                            </li>
+                            </Link>ㅊ
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
-        <div className="pagination-wrap flex space-between">
-            <div className="left-btn">
+        <div className="pagination-wrap flex items-center flex-center lg:space-between mt-5">
+            <div className="left-btn hidden lg:block">
                 <button className="btn btn-sm btn-outline-primary">
                     <Lucide icon="ArrowLeft" />
                     Previous
                 </button>
             </div>
+            <button type="button" className="lg:hidden"><Lucide icon="ChevronLeft" /></button>
             <div className="">
                 <nav className="w-full sm:w-auto sm:mr-auto">
                     <ul className="pagination">
@@ -182,12 +272,13 @@ return (
                     </ul>
                 </nav>
             </div>
-            <div className="right-btn">
+            <div className="right-btn hidden lg:block">
                 <button className="btn btn-sm btn-outline-primary active">
                     Next
                     <Lucide icon="ArrowRight" />
                 </button>
             </div>
+            <button type="button" className="lg:hidden"><Lucide icon="ChevronRight" /></button>
         </div>
     </div>
     {/* 메시지 보관 */}
@@ -274,11 +365,11 @@ return (
         </a>
         <ModalHeader className="flex-col p-5">
             <h2 className="font-bold text-base mr-auto pb-3 border-b w-full">
-                <span className="text-slate-400 font-normal mr-2 inline-block w-24">제목</span>
+                <span className="text-slate-400 font-normal mr-2 block md:inline-block w-24">제목</span>
                 안녕하십니까. 구직 제의 드립니다.
             </h2>
             <div className="font-bold text-base mr-auto pt-3">
-                <span className="text-slate-400 font-normal mr-2 inline-block w-24">보낸사람</span>
+                <span className="text-slate-400 font-normal mr-2 block md:inline-block w-24">보낸사람</span>
                 SONY ENTERTAINMENT
             </div>
         </ModalHeader>
@@ -397,11 +488,11 @@ return (
         </a>
         <ModalHeader className="flex-col p-5">
             <h2 className="font-bold text-base mr-auto pb-3 border-b w-full">
-                <span className="text-slate-400 font-normal mr-2 inline-block w-24">받는사람</span>
+                <span className="text-slate-400 font-normal mr-2 block md:inline-block w-24">받는사람</span>
                 SONY ENTERTAINMENT
             </h2>
             <div id="reply-title" className="font-normal text-base mr-auto pt-3 w-full">
-                <span className="text-slate-400 font-normal mr-2 inline-block w-24">제목</span>
+                <span className="text-slate-400 font-normal mr-2 block md:inline-block w-24">제목</span>
                 <input className=" "type="text" placeholder="제목을 입력해주세요"/>
             </div>
         </ModalHeader>

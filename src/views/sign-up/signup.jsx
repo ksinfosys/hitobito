@@ -31,12 +31,12 @@ const Signup = () => {
                 고객이 아니시면 회원가입 해주세요.
                 </div>
                 <div className="find-btn flex flex-col">
-                    <button className="btn btn-primary h-48" onClick={() => { setfindId(true); }}>
+                    <Link to="/signup-em" className="btn btn-primary h-48">
                         구직자 회원가입
-                    </button>
-                    <button className="btn btn-pending h-48 mt-5" onClick={() => { setfindId(true); }}>
+                    </Link>
+                    <Link to="/signup-business" className="btn btn-pending h-48 mt-5">
                         기업 회원가입
-                    </button>
+                    </Link>
                 </div>
             </div>
 

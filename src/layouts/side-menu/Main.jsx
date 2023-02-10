@@ -16,6 +16,10 @@ import {
 } from "@/base-components";
 import logoUrl from "@/assets/images/logo.svg";
 import UserIcon from "@/assets/images/user.svg";
+import Hamburger from "@/assets/images/hamburger-icon.svg";
+import Question from "@/assets/images/question-icon.svg";
+import noti from "@/assets/images/noti-icon.svg";
+import ModalX from "@/assets/images/modal-x-button.svg";
 import classnames from "classnames";
 import SideMenuTooltip from "@/components/side-menu-tooltip/Main";
 import $ from "jquery"
@@ -25,14 +29,7 @@ function Main() {
     const location = useLocation();
     const [formattedMenu, setFormattedMenu] = useState([]);
     const sideMenuStore = useRecoilValue(useSideMenuStore);
-    const ishome = useMatch("/");
     const sideMenu = () => nestedMenu($h.toRaw(sideMenuStore.menu), location);
-    const [modifyModal, setModifyModal] = useState(false);
-    const [password, setPassword] = useState(false);
-    const [notifiModal, setNotifiModal] = useState(false);
-    const [notifyrange, setNotifyrange] = useState("");
-    const [dashboardModal, setDashboardModal] = useState(false);
-
     useEffect(() => {
         dom("body").removeClass("error-page").removeClass("login").addClass("main");
         setFormattedMenu(sideMenu());
@@ -41,21 +38,20 @@ function Main() {
     //사이드메뉴
     const [sidesMenu, setSidesMenu] = useState(false);
 
+    const [buttonSlideOverPreview, setButtonSlideOverPreview] = useState(false);
 
 
 
     return (
         <div>
             <div>
-                <div className="top_header">
-                    <div className="flex justify-between items-center top_header-inner">
-
+                <div className="top_header lg:px-5">
+                    <div className="justify-between items-center top_header-inner display-none lg:flex ">
                         <div className="flex items-center">
                             <Link to="/">
                                 <img src={logoUrl} alt="" />
                             </Link>
                         </div>
-
                         <div className="flex items-center topLink_menu gap-1">
                             <div className="flex items-center topuser-menu">
                                 <div className="topuser-item">
@@ -194,13 +190,79 @@ function Main() {
                             </Dropdown>
                         </div>
                     </div>
+                    <div className="lg:hidden flex space-between px-5 items-center">
+                        <button>
+                            <img src={Hamburger} alt="" onClick={() => { setButtonSlideOverPreview(true); }} />
+                        </button>
+                        <div className="flex gap-3 items-center">
+                            <button>
+                                <img src={Question} alt="" />
+                            </button>
+                            <div className="mo-top-point">
+                                P <span>3,000</span>
+                            </div>
+                            <button>
+                                <img src={noti} alt="" />
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
-
+            <Modal backdrop="static" slideOver={true} show={buttonSlideOverPreview} onHidden={() => {
+                setButtonSlideOverPreview(false);
+            }} className="mobile-ham-modal-left"
+            >
+                <a onClick={() => {
+                    setButtonSlideOverPreview(false);
+                }}
+                    className="absolute top-0 left-auto right-0 mt-4 -ml-12"
+                    href="#"
+                >
+                </a>
+                <ModalHeader className="p-5">
+                    <div className="flex space-between w-full">
+                        <img src={logoUrl} alt="" className="mo-ham-logo" />
+                        <button>
+                            <img src={ModalX} alt="" className="mo-ham-x" onClick={() => {
+                                setButtonSlideOverPreview(false);
+                            }} />
+                        </button>
+                    </div>
+                </ModalHeader>
+                <ModalBody>
+                    <ul className="mobile-nav">
+                        <li>
+                            <Link to="/">
+                                면접제의 확인
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to="/message-reception">
+                                메세지함
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to="/point-detail">
+                                포인트 확인
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to="/resume-regist">
+                                이력서 관리
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to="">
+                                SNS로 공유
+                            </Link>
+                        </li>
+                    </ul>
+                </ModalBody>
+            </Modal>
 
             <div className="main-content flex mt-0">
                 {/* BEGIN: Side Menu */}
-                <nav className={sidesMenu ? "side-nav on shrink-0 tr" : "side-nav shrink-0 tr"}>
+                <nav className={sidesMenu ? "side-nav on shrink-0 tr " : "side-nav shrink-0 tr "}>
                     <ul>
                         {/* BEGIN: First Child */}
                         {formattedMenu.map((menu, menuKey) =>

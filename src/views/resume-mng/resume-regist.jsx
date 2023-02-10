@@ -6,6 +6,13 @@ import { useState } from 'react';
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import ListGroup from 'react-bootstrap/ListGroup';
+import ResumeMobile from "../../components/resume-mobile/resume-mobile";
+import ResumeMobile1 from "../../components/resume-mobile/resume-mobile-2";
+import ResumeMobile2 from "../../components/resume-mobile/resume-mobile-3";
+import ResumeMobile3 from "../../components/resume-mobile/resume-mobile-4";
+import ResumeMobile4 from "../../components/resume-mobile/resume-mobile-5";
+import MobileBottom from "../../components/mobileBottom/mobile-bottom";
+import MobileBottom2 from "../../components/mobileBottom/mobile-bottom2";
 
 import CameraPhoto from "@/assets/images/camera.png";
 import AddBtn from "@/assets/images/add-btn.svg";
@@ -20,13 +27,13 @@ import checkIcon from "@/assets/images/check-icon.svg";
 
 
 const ResumeRegist = () => {
-    const [selectPop, setselectPop] = useState(false);
+    const [selectPop, setselectPop]= useState(false);
 
 
     return (
         <>
-            <div className="resume-mng">
-                <div className="box-type-default">
+            <div className="resume-mng ">
+                <div className="box-type-default hidden lg:block">
                     <div className="p-5 border-b border-slate-200/60 text-sm">
                         이력서 등록
                     </div>
@@ -600,13 +607,16 @@ const ResumeRegist = () => {
                         </div>
                     </div>
                 </div>
-
+                <div className="mo-resume-mng">
+                    <ResumeMobile  progress="progress-bar  w-1/5 bg-green"/>
+                </div>
             </div>
+            <MobileBottom />
             {/* 담당공정 선택 */}
             <Modal
                 show={selectPop}
                 onHidden={() => {
-                    setselectPop(false);
+                    setselectPop(true);
                 }}
                 className="select-modal"
             >
@@ -649,7 +659,7 @@ const ResumeRegist = () => {
                         <button className="btn btn-outline-secondary">
                             전체선택
                         </button>
-                        <button className="btn btn-primary" onClick={() => { setselectPop(false); }}>
+                        <button className="btn btn-primary" onClick={() => { setselectPop(true); }}>
                             확인
                         </button>
                     </div>

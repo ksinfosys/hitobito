@@ -13,21 +13,21 @@ const Suspension = () => {
         <>
             <div id="suspension" className={isActive ? "membership display-none" : "membership"}>
                 <div className="box-type-default">
-                    <div className="p-5 border-b border-slate-200/60 text-sm">
+                    <div className="p-5 border-b border-slate-200/60 text-lg font-bold lg:text-sm lg:font-normal">
                         이용정지
                     </div>
-                    <div className="pt-10 text-center cont-wrap flex flex-col items-center justify-center">
-                        <p className="font-bold">이용을 정지하는 기간동안 기업으로부터 면접제의<br />및 메시지 수신이 불가능하게 됩니다.</p>
+                    <div className="py-10 px-5 text-center cont-wrap flex flex-col items-center justify-center">
+                        <p className="font-bold">이용을 정지하는 기간동안 기업으로부터 면접제의 <br className="hidden sm:block"/>및 메시지 수신이 불가능하게 됩니다.</p>
                         <button type="button" className="btn btn-primary w-80 mt-10" onClick={() => { suspensionRequest(true); }}>이용정지</button>
                     </div>
                 </div>
             </div>
             <div id="suspension" className={isActive?"membership":"membership display-none"}>
                 <div className="box-type-default">
-                    <div className="p-5 border-b border-slate-200/60 text-sm">
+                    <div className="p-5 border-b border-slate-200/60 text-lg font-bold lg:text-sm lg:font-normal">
                         이용정지
                     </div>
-                    <div className="pt-10 text-center cont-wrap flex flex-col items-center justify-center">
+                    <div className="py-10 px-5 text-center cont-wrap flex flex-col items-center justify-center">
                         <p className="font-bold"><span className="text-primary">2023년 1월 3일</span>부터 서비스 이용정지 중입니다.</p>
                         <button type="button" className="btn btn-primary w-80 mt-10" onClick={() => { suspensionResume(true); }}>이용재개</button>
                     </div>

@@ -32,20 +32,20 @@ const SignupEmployee = () => {
                 </div>
                 <div className="find-btn ">
                     <div className="btn-wrap flex flex-col gap-4">
-                        <button className="btn-line flex flex-center">
-                            <div className="button-wrap flex items-center">
+                        <button className="btn-line flex flex-center ">
+                            <div className="button-wrap flex items-center gap-4">
                                 <img src={LineIcon} alt="" />
                                 라인 로그인
                             </div>
                         </button>
                         <button className="btn-google flex flex-center">
-                            <div className="button-wrap flex items-center">
+                            <div className="button-wrap flex items-center gap-4">
                                 <img src={GoogleIcon} alt="" />
                                 구글 로그인
                             </div>
                         </button>
                         <button className="btn-kakao flex flex-center">
-                            <div className="button-wrap flex items-center">
+                            <div className="button-wrap flex items-center gap-4">
                                 <img src={KakaoIcon} alt="" />
                                 카카오 로그인
                             </div>

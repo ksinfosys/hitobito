@@ -11,10 +11,10 @@ return (
 <>
     <div className="nickname">
         <div className="box-type-default">
-            <div className="p-5 border-b border-slate-200/60 text-sm">
+            <div className="p-5 border-b border-slate-200/60 text-lg font-bold lg:text-sm lg:font-normal">
                 닉네임 변경
             </div>
-            <div className="cont-wrap p-10">
+            <div className="cont-wrap py-10 px-5">
                 <div className="form p-5 bg-lb">
                     <div>
                         <label htmlFor="vertical-form-1" className="form-label mb-2">현재 닉네임</label>

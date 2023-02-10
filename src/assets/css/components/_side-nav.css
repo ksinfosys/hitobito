@@ -1,12 +1,11 @@
 .side-nav {
   width: 203px;
   @apply pr-5 pb-16 overflow-x-hidden;
-  @include media-breakpoint-down(xl) {
-    width: 85px;
-  }
-  @include media-breakpoint-down(md) {
+
+  @include media-breakpoint-down(lg) {
     @apply hidden;
   }
+
   &.side-nav--simple {
     width: 85px;
     .side-menu {
@@ -29,6 +28,7 @@
     background: #F7FAFF;
     color:#000;
     border-radius: 5px;
+    
     @apply flex items-center mb-1 relative dark:text-slate-300;
     .side-menu__title {
       @apply w-full ml-3 flex items-center;
@@ -45,7 +45,7 @@
         }
       }
       @include media-breakpoint-down(xl) {
-        @apply hidden;
+        /* @apply hidden; */
       }
     }
   }
